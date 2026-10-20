@@ -1,0 +1,191 @@
+{
+  "player": {
+    "speed": 3,
+    "size": 0.6,
+    "colour": "#e8c547",
+    "nameplate": {
+      "lift": 0.6,
+      "text": "Player",
+      "bar": { "at": [-24, 4], "period": 6, "fill": "#6fd08c" }
+    }
+  },
+  "helix": {
+    "at": [0, 0, -6],
+    "radius": 1.6,
+    "spacing": 0.55,
+    "twist": 0.6283185307179586,
+    "rise": 0.35,
+    "spin": 0.12,
+    "top": 9.5,
+    "bottom": -9.5,
+    "ball": 0.22,
+    "rod": 0.06,
+    "segments": 24,
+    "surface": { "roughness": 0.4, "metalness": 0.1 },
+    "strands": ["#5ad1e8", "#a48cf0"],
+    "rung": "#3a4560",
+    "backbone": "#2a3140",
+    "ambient": { "color": "#ffffff", "intensity": 0.35 },
+    "sun": { "color": "#ffffff", "intensity": 2.2, "at": [4, 6, 8] }
+  },
+  "specimen": {
+    "card": { "panel": "specimen", "title": { "at": [16, 14], "text": "TYPE & COLOUR" } },
+    "type": [
+      { "style": "display", "at": [16, 34], "text": "Display 28" },
+      { "style": "heading", "at": [16, 74], "text": "Heading 18" },
+      { "style": "body", "at": [16, 102], "text": "Body 14 — the quick brown fox" },
+      { "style": "caption", "at": [16, 124], "text": "Caption 12 · secondary text" },
+      { "style": "mono", "at": [16, 144], "text": "mono 13  0123456789" }
+    ],
+    "swatches": {
+      "at": [16, 176],
+      "size": [40, 32],
+      "radius": 6,
+      "step": [47, 60],
+      "per": 6,
+      "label": [0, 36],
+      "colors": ["#0b0e14", "#141821", "#232a38", "#2a3140", "#8a93a6", "#e8ecf2", "#5ad1e8", "#6fd08c", "#e8c547", "#e85a6b", "#a48cf0", "#f28a97"]
+    }
+  },
+  "badge": {
+    "card": { "panel": "badge", "title": { "at": [16, 14], "text": "PICTURE & BITMAP FONT" } },
+    "picture": "gem.ui",
+    "font": "pixel",
+    "icon": { "at": [16, 36], "scale": 3 },
+    "count": { "at": [76, 52], "every": 2, "text": "GEMS x{gems}" },
+    "button": { "style": "button.pixel", "at": [176, 42], "text": "RESET!" },
+    "notes": [
+      { "at": [16, 96], "text": "Sprite of a \"for\": \"ui\" texture entry." },
+      { "at": [16, 114], "text": "BitmapText and a bitmap button in \"pixel\"," },
+      { "at": [16, 132], "text": "a \"bitmapfont\" entry drawn nearest." }
+    ]
+  },
+  "buttons": {
+    "card": { "panel": "buttons", "title": { "at": [16, 14], "text": "BUTTONS" } },
+    "buttons": [
+      { "style": "button.primary", "at": [16, 40], "text": "Pause", "does": "pause" },
+      { "style": "button.secondary", "at": [156, 40], "text": "Menu", "does": "menu" },
+      { "style": "button.ghost", "at": [16, 88], "text": "Help", "does": "help" },
+      { "style": "button.danger", "at": [156, 88], "text": "Reset clock", "does": "reset" }
+    ],
+    "notes": [
+      { "at": [16, 140], "text": "Hover a button for its focus fill." },
+      { "at": [16, 158], "text": "Each one works: try them." }
+    ]
+  },
+  "meters": {
+    "card": { "panel": "meters", "title": { "at": [16, 14], "text": "METERS" } },
+    "bars": {
+      "first": [16, 38],
+      "step": 24,
+      "bar": [80, 3],
+      "value": { "at": [268, 0], "anchor": [1, 0], "text": "{percent}%" },
+      "rows": [
+        { "label": "Health", "fill": "#6fd08c", "period": 6, "phase": 0 },
+        { "label": "Mana", "fill": "#5ad1e8", "period": 4, "phase": 0.25 },
+        { "label": "Stamina", "fill": "#e8c547", "period": 3, "phase": 0.5 },
+        { "label": "Shield", "fill": "#a48cf0", "period": 8, "phase": 0.75 }
+      ]
+    },
+    "pips": {
+      "label": { "at": [16, 144], "text": "Segments" },
+      "at": [16, 166],
+      "count": 6,
+      "size": [22, 10],
+      "radius": 2,
+      "step": 26,
+      "on": "#e85a6b",
+      "off": "#232a38",
+      "period": 10
+    },
+    "ring": {
+      "label": { "at": [196, 144], "text": "Cooldown" },
+      "at": [222, 196],
+      "radius": 22,
+      "start": -1.5707963267948966,
+      "period": 5,
+      "value": { "at": [222, 196], "anchor": [0.5, 0.5], "text": "{seconds}s" }
+    }
+  },
+  "iris": {
+    "card": { "panel": "iris", "title": { "at": [16, 14], "text": "IRIS · SCENE CHANGE" } },
+    "box": { "at": [16, 36], "size": [268, 96] },
+    "ground": "#232a38",
+    "hero": { "at": [134, 48], "radius": 10, "fill": "#e8c547" },
+    "reach": 143,
+    "period": 3,
+    "fill": "#05070b"
+  },
+  "hud": {
+    "card": { "panel": "hud", "title": { "at": [16, 14], "text": "HUD READOUT" } },
+    "score": { "label": { "at": [16, 34], "text": "SCORE" }, "at": [16, 48], "digits": 6, "rate": 125, "text": "{score}" },
+    "time": { "label": { "at": [180, 34], "text": "TIME" }, "at": [180, 48], "text": "{minutes}:{seconds}" },
+    "lives": { "label": { "at": [16, 92], "text": "LIVES" }, "at": [22, 118], "count": 3, "size": 6, "step": 18, "fill": "#e85a6b" }
+  },
+  "toasts": {
+    "card": { "panel": "toasts", "title": { "at": [16, 14], "text": "TOASTS" } },
+    "first": [16, 40],
+    "step": 56,
+    "size": [268, 48],
+    "head": [16, 9],
+    "body": [16, 27],
+    "every": 3,
+    "stack": 3,
+    "fade": 0.4,
+    "slide": 24,
+    "lines": [
+      { "head": "Achievement unlocked", "body": "Opened the design gym", "fill": "#e8c547" },
+      { "head": "Saved", "body": "Progress written to slot 1", "fill": "#6fd08c" },
+      { "head": "New message", "body": "A friend wants to play", "fill": "#5ad1e8" },
+      { "head": "Connection lost", "body": "Trying again in 5 seconds", "fill": "#e85a6b" },
+      { "head": "Level up", "body": "You reached level 12", "fill": "#a48cf0" }
+    ]
+  },
+  "monitor": {
+    "card": { "panel": "monitor", "title": { "at": [16, 14], "text": "SURFACE · A SCREEN IN 3D" } },
+    "at": [6.1, 0.4, 0],
+    "turn": -0.35,
+    "size": [3.2, 1.8],
+    "clock": { "at": [16, 38], "text": "T+{seconds}" },
+    "bar": { "at": [16, 96], "period": 4, "fill": "#5ad1e8" },
+    "note": { "at": [16, 114], "text": "ui.surface(\"monitor\") on a plane" }
+  },
+  "beacon": {
+    "margin": 28,
+    "size": 12
+  },
+  "menu": {
+    "card": { "panel": "menu", "title": { "at": [24, 18], "text": "MENU · A MENU THE PLAYER OPENS" } },
+    "first": [24, 44],
+    "step": 46,
+    "items": [
+      { "text": "Resume", "does": "close" },
+      { "text": "Pause game", "does": "pause" },
+      { "text": "Help", "does": "help" },
+      { "text": "Reset clock", "does": "reset" }
+    ],
+    "hint": { "at": [24, 236], "text": "↑ ↓ move · Enter press · Esc or M close" }
+  },
+  "help": {
+    "card": { "panel": "help", "title": { "at": [24, 18], "text": "HELP · KEYS AND PAD" } },
+    "first": [24, 46],
+    "step": 26,
+    "text": 160,
+    "lines": [
+      { "key": "Arrows / WASD", "text": "walk the square · move the focus" },
+      { "key": "Stick / D-pad", "text": "the same, on a gamepad" },
+      { "key": "M", "text": "menu (a menu the player opens)" },
+      { "key": "H", "text": "this help, in one group with the menu" },
+      { "key": "Esc / Start", "text": "pause (a screen the game puts up)" },
+      { "key": "Enter / A", "text": "press the focused button" },
+      { "key": "Esc / B", "text": "close a menu" }
+    ],
+    "close": { "at": [24, 240], "text": "Close" }
+  },
+  "pause": {
+    "card": { "panel": "pause", "title": { "at": [24, 18], "text": "PAUSE · A SCREEN THE GAME PUTS UP" } },
+    "head": { "at": [180, 74], "anchor": [0.5, 0.5], "text": "Paused" },
+    "note": { "at": [180, 106], "anchor": [0.5, 0.5], "text": "The server holds this screen: every rule stops." },
+    "resume": { "at": [116, 136], "text": "Resume" }
+  }
+}

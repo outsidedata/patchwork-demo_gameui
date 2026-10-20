@@ -1,0 +1,176 @@
+{
+  "world": {
+    "predict": { "epsilon": 0.000001, "cutoff": 60, "halflife": 100, "snap": 2, "below": 0.0001 },
+    "defs": "demo_gameui",
+    "loader": {
+      "assets": {
+        "demo_gameui": {
+          "type": "json",
+          "url": "/games/demo_gameui/assets/demo_gameui.json",
+          "preload": true
+        },
+        "gem.ui": {
+          "type": "texture",
+          "url": "/games/demo_gameui/assets/gem.png",
+          "for": "ui",
+          "nearest": true,
+          "preload": true
+        },
+        "pixel": {
+          "type": "bitmapfont",
+          "url": "/games/demo_gameui/assets/pixel.fnt",
+          "for": "ui",
+          "nearest": true,
+          "preload": true
+        }
+      }
+    },
+    "player": {
+      "deadzone": 0.3,
+      "actions": {
+        "walk": {
+          "label": "Walk",
+          "keys": [
+            ["ArrowLeft", "a", "Pad14", "PadStickLeft"],
+            ["ArrowRight", "d", "Pad15", "PadStickRight"],
+            ["ArrowUp", "w", "Pad12", "PadStickUp"],
+            ["ArrowDown", "s", "Pad13", "PadStickDown"]
+          ]
+        },
+        "pause": {
+          "label": "Pause",
+          "keys": ["Escape", "Pad9"]
+        }
+      }
+    },
+    "shipped": {
+      "plugins": ["cards", "helix"]
+    },
+    "ui": {
+      "panels": {
+        "specimen": { "anchor": "top-left", "at": [16, 16], "size": [300, 300] },
+        "badge": { "anchor": "top-left", "at": [16, 332], "size": [300, 156] },
+        "buttons": { "anchor": "bottom-left", "at": [16, -16], "size": [300, 200] },
+        "meters": { "anchor": "top", "at": [0, 16], "size": [300, 236] },
+        "iris": { "anchor": "bottom", "at": [0, -16], "size": [300, 148] },
+        "hud": { "anchor": "top-right", "at": [-16, 16], "size": [300, 136] },
+        "toasts": { "anchor": "bottom-right", "at": [-16, -16], "size": [300, 220] },
+        "monitor": { "anchor": "top-left", "size": [256, 144], "screen": "#0b0e14" },
+        "names": { "anchor": "top-left" },
+        "edge": { "anchor": "top-left", "size": [1280, 720] },
+        "menu": { "anchor": "center", "size": [320, 272], "modal": true, "layer": 1, "key": "m", "group": "menus", "backdrop": { "color": "#05070b", "alpha": 0.55 } },
+        "help": { "anchor": "center", "size": [460, 300], "modal": true, "layer": 1, "key": "h", "group": "menus", "backdrop": { "color": "#05070b", "alpha": 0.55 } },
+        "pause": { "anchor": "center", "size": [360, 196], "modal": true, "layer": 2, "backdrop": { "color": "#05070b", "alpha": 0.7 } }
+      },
+      "keys": {
+        "up": ["ArrowUp", "Pad12"],
+        "down": ["ArrowDown", "Pad13"],
+        "left": ["ArrowLeft", "Pad14"],
+        "right": ["ArrowRight", "Pad15"],
+        "press": ["Enter", " ", "Pad0"],
+        "back": ["Escape", "Pad1"]
+      },
+      "styles": {
+        "card": { "radius": 10, "fill": { "color": "#141821" }, "edge": { "width": 1, "color": "#2a3140" } },
+        "eyebrow": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 11, "fontWeight": "700", "letterSpacing": 2, "fill": "#5ad1e8" },
+        "display": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 28, "fontWeight": "800", "fill": "#e8ecf2" },
+        "heading": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 18, "fontWeight": "700", "fill": "#e8ecf2" },
+        "body": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fill": "#e8ecf2" },
+        "caption": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 12, "fill": "#8a93a6" },
+        "mono": { "fontFamily": ["ui-monospace", "SF Mono", "Menlo", "monospace"], "fontSize": 13, "fill": "#6fd08c" },
+        "swatch": { "fontFamily": ["ui-monospace", "SF Mono", "Menlo", "monospace"], "fontSize": 9, "fill": "#8a93a6" },
+        "key": { "fontFamily": ["ui-monospace", "SF Mono", "Menlo", "monospace"], "fontSize": 13, "fontWeight": "700", "fill": "#5ad1e8" },
+        "readout": { "fontFamily": ["ui-monospace", "SF Mono", "Menlo", "monospace"], "fontSize": 30, "fontWeight": "800", "fill": "#e8ecf2" },
+        "pixel": { "fontFamily": "pixel", "fontSize": 14, "fill": "#e8c547" },
+        "nameplate": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 12, "fontWeight": "700", "fill": "#e8ecf2", "stroke": { "color": "#05070b", "width": 3, "join": "round" } },
+        "toast": { "radius": 8, "fill": { "color": "#1c2230" }, "edge": { "width": 1, "color": "#2a3140" }, "stripe": 4 },
+        "toast.head": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 13, "fontWeight": "700", "fill": "#e8ecf2" },
+        "toast.body": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 12, "fill": "#8a93a6" },
+        "ring": { "width": 6, "track": "#232a38", "fill": "#5ad1e8" },
+        "arrow": { "fill": "#e8c547", "edge": { "width": 2, "color": "#05070b" } },
+        "bar": { "size": [150, 10], "edge": 1, "frame": { "color": "#0b0e14" }, "track": { "color": "#232a38" } },
+        "bar.small": { "size": [48, 5], "edge": 1, "frame": { "color": "#05070b" }, "track": { "color": "#232a38" } },
+        "button.primary": { "size": [128, 36], "radius": 8, "fill": { "color": "#5ad1e8" }, "focus": { "color": "#8ee3f2" }, "text": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fontWeight": "700", "fill": "#0b0e14" } },
+        "button.secondary": { "size": [128, 36], "radius": 8, "fill": { "color": "#232a38" }, "focus": { "color": "#36405a" }, "text": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fontWeight": "600", "fill": "#e8ecf2" } },
+        "button.danger": { "size": [128, 36], "radius": 8, "fill": { "color": "#e85a6b" }, "focus": { "color": "#f28a97" }, "text": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fontWeight": "700", "fill": "#0b0e14" } },
+        "button.ghost": { "size": [128, 36], "radius": 8, "fill": { "color": "#141821", "alpha": 0 }, "focus": { "color": "#232a38" }, "text": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fontWeight": "600", "fill": "#5ad1e8" } },
+        "button.pixel": { "size": [108, 36], "radius": 0, "bitmap": true, "fill": { "color": "#232a38" }, "focus": { "color": "#36405a" }, "text": { "fontFamily": "pixel", "fontSize": 14, "fill": "#e8c547" } },
+        "button.menu": { "size": [272, 36], "radius": 8, "fill": { "color": "#232a38" }, "focus": { "color": "#5ad1e8" }, "text": { "fontFamily": ["ui-sans-serif", "system-ui", "sans-serif"], "fontSize": 14, "fontWeight": "600", "fill": "#e8ecf2" } }
+      }
+    }
+  },
+  "plugins": [
+    "loader",
+    "scenemanager",
+    "player",
+    "render3d",
+    "ui",
+    "shipped"
+  ],
+  "seats": 2,
+  "prefabs": {
+    "engine": {
+      "dt": 0.016666666666666666,
+      "width": 1280,
+      "height": 720
+    },
+    "scenemanager": {
+      "out": {}
+    },
+    "loader": {},
+    "render3d": {
+      "camera": { "fov": 50, "near": 0.1, "far": 100, "at": [0, 0, 10], "look": [0, 0, 0] },
+      "tone": "neutral",
+      "exposure": 1,
+      "background": "#05070b"
+    },
+    "player": {
+      "seat": 0,
+      "stood": false,
+      "pos": [0, 0, 0],
+      "move": [0, 0]
+    },
+    "start": {
+      "slot": 0,
+      "pos": [0, 0, 0]
+    },
+    "clock": {
+      "t": 0
+    },
+    "pause": {
+      "on": false
+    },
+    "helix": {},
+    "specimen": {},
+    "badge": {},
+    "buttons": {},
+    "meters": {},
+    "iris": {},
+    "hud": {},
+    "toasts": {},
+    "monitor": {},
+    "beacon": {},
+    "menu": {},
+    "help": {}
+  },
+  "actors": [
+    { "is": "scenemanager" },
+    { "is": "loader" },
+    { "is": "start", "slot": 0, "pos": [0, 0, 0] },
+    { "is": "start", "slot": 1, "pos": [1.5, 0, 0] },
+    { "is": "clock" },
+    { "is": "pause" },
+    { "is": "helix" },
+    { "is": "specimen" },
+    { "is": "badge" },
+    { "is": "buttons" },
+    { "is": "meters" },
+    { "is": "iris" },
+    { "is": "hud" },
+    { "is": "toasts" },
+    { "is": "monitor" },
+    { "is": "beacon" },
+    { "is": "menu" },
+    { "is": "help" }
+  ]
+}
